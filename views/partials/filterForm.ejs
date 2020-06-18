@@ -1,0 +1,23 @@
+
+<div class="container">
+   <form action="/filterParameters" method="POST" style="margin-bottom: 2rem">
+
+     <span class="font-weight-bold">Сортировать: </span>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sortRadio" id="sortExpensive" value="sortExpensive">
+            <label class="form-check-label" for="sortExpensive">Сначала дороже</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sortRadio" id="sortCheap" value="sortCheap">
+            <label class="form-check-label" for="sortCheap">Сначала дешевле</label>
+        </div>
+        <span class="font-weight-bold"> Цена: </span>
+        <input type="number"  id="emailSignIn" name="startPrice" placeholder="от">
+        <input type="number"  id="emailSignIn" name="endPrice" placeholder="до">
+
+    <button type="submit" class="btn btn-outline-primary">Фильтровать</button>
+
+    <a href="/createPage" class="btn btn-outline-primary my-2 my-sm-0" >Добавить товар</a>
+
+  </form>
+</div>

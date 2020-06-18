@@ -1,0 +1,63 @@
+
+
+<%- include("partials/navbar.ejs",{isAuthenticated: isAuthenticated});%>
+
+<% if(alert.length > 0 ){ %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%=alert %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<%}%>
+
+
+<div class="col-sm-8 auth-form">
+  <ul class="nav nav-tabs " id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Войти</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Регистрация</a>
+    </li>
+
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <form action="/auth/login" method="POST">
+            <div class="form-group row">
+                <label for="loginEmail" >Email</label>
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" required >
+            </div>
+
+            <div class="form-group row">
+                <label for="loginPassword" >Пароль</label>
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="password">
+            </div>
+                 <button type="submit" class="btn btn-primary">Войти</button>
+
+        </form>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <form action="/auth/register" method="POST">
+            <div class="form-group row">
+                <label for="registerEmail" >Email</label>
+                 <input type="email" class="form-control" id="registerEmail" name="registerEmail" placeholder="Email" required>
+
+            </div>
+            <div class="form-group row">
+                <label for="registerPassword" >Пароль</label>
+                <input type="password" class="form-control" id="registerPassword" name="registerPassword" placeholder="password"
+                           required>
+            </div>
+            <div class="form-group row">
+                <label for="age" >Возраст</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Возвраст" required>
+            </div>
+                 <button type="submit" class="btn btn-success">Регистрация</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

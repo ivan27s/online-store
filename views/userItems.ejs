@@ -1,0 +1,32 @@
+
+
+<%- include("partials/navbar.ejs",{isAuthenticated: isAuthenticated});%>
+
+
+ <h1 class="mt-0 mb-1">Мои товары: </h1>
+<ul class="list-unstyled" >
+    <% list.forEach((item,index) =>{  %>
+    <li class="media">
+        <div class="col-2" >
+            <img src=<%=item.image %> alt="<%=item.title %>">
+        </div>
+
+        <div class="media-body col-10">
+          <div class="row remove-item">
+            <a href="/itemDetail/<%=item.id%> "> <h4 class="mt-0 mb-1">Модель: <%=item.title %>
+                    <span class="price">Цена: <%=item.price %>$</span></h4></a>
+
+            <form class="" action="/removeItem/<%=item.id%>" method="POST">
+                <button type="submit" class="btn btn-outline-danger"
+                >Удалить</button>
+            </form>
+          </div>
+            <p><%=item.description %></p>
+
+        </div>
+    </li>
+    <%}) %>
+</ul>
+
+
+<%- include("partials/footer.ejs") %>

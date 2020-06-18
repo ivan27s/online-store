@@ -1,0 +1,49 @@
+#body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: white;
+}
+.navbar{
+    margin-bottom: 20px;
+    background: lavender;
+    justify-content: space-between;
+}
+.navbar form{
+   margin-right: 10px;
+    margin-left: 15px;
+}
+a {
+  color: aqua;
+}
+.media{
+    margin: 20px;
+    padding: 5px;
+    background: aliceblue;
+    border-radius: 10px;
+    height: 9rem;
+}
+.media.item-media{
+    height: 17rem;
+}
+.media img{
+  height: 8rem;
+}
+.media img.item-img{
+  height: 15rem;
+    padding-right: 10px;
+
+}
+.auth-form {
+  margin:  100px auto;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.auth-form form{
+  padding: 30px;
+}
+.remove-item{
+   justify-content: space-between;
+}
+.remove-item form{
+    margin: 5px 20px;
+}

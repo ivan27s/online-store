@@ -1,0 +1,13 @@
+
+<%- include("partials/navbar.ejs",{isAuthenticated: isAuthenticated});%>
+
+
+<div class="media item-media">
+    <img class="item-img" src=<%=item.image%> class="align-self-center" alt="...">
+    <div class="media-body">
+        <h3 class="mt-0">Модель: <%=item.title %>  <span class="price">Цена: <%=item.price %>$</span></h3>
+        <p><%=item.description %></p>
+     </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

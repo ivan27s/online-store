@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store App</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body id="body">
+
+<nav class="navbar navbar-light  ">
+    <a class="navbar-brand" href="/">Home</a>
+
+       <% if(isAuthenticated){ %>
+    <div class="row">
+        <a href="/usersItems" class="btn btn-outline-success" >Мои товары</a>
+        <form action="/auth/logout" method="POST" >
+            <button type="submit" class="btn btn-outline-warning  "
+                   >Вийти</button>
+        </form>
+  <div/>
+     <%}else {%>
+         <a href="/auth/authPage" class="btn btn-outline-success my-2 my-sm-0" >Вход/регистрация</a>
+        <%}%>
+    </div>
+</nav>
+
+

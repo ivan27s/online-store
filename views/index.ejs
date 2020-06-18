@@ -1,0 +1,23 @@
+
+  <%- include("partials/navbar.ejs",{isAuthenticated: isAuthenticated});%>
+
+  <%- include("partials/filterForm.ejs",{isAuthenticated: isAuthenticated}) %>
+
+
+
+  <ul class="list-unstyled" >
+    <% list.forEach((item,index) =>{  %>
+    <li class="media">
+      <div class="col-2" >
+        <img src=<%=item.image %> alt="<%=item.title %>">
+      </div>
+      <div class="media-body ">
+        <a href="/itemDetail/<%=item.id%> "> <h4 class="mt-0 mb-1">Модель: <%=item.title %>  <span class="price">Цена: <%=item.price %>$</span></h4></a>
+          <p><%=item.description %></p>
+
+         </div>
+    </li>
+      <%}) %>
+  </ul>
+
+  <%- include("partials/footer.ejs") %>
